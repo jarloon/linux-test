@@ -1,0 +1,21 @@
+#!/bin/bash
+i=1
+mas_string=()  
+while true 
+do
+	read string
+    if [[ -z $string ]] 
+    then 
+       mas_string+=( "" )
+       break
+    fi
+   
+    mas_string+=( "$i. $string" )
+    let "i=$i+1" 
+done 
+
+
+for i in "${mas_string[@]}"
+do 
+	echo $i 
+done 
